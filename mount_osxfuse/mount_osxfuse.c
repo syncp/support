@@ -45,6 +45,10 @@
 
 #include "mntopts.h"
 
+#ifndef DEVELOPER_NAME
+#  define DEVELOPER_NAME "Benjamin Fleischer"
+#endif
+
 static bool quiet_mode = false;
 static int signal_fd  = -1;
 
@@ -933,7 +937,7 @@ main(int argc, char **argv)
                     (CFURLRef)NULL,
                     (CFURLRef)NULL,
                     CFSTR("System Extension Blocked"),
-                    CFSTR("The system extension required for mounting FUSE volumes could not be loaded.\n\nPlease open the Security & Privacy System Preferences pane, go to the General preferences and allow loading system software from developer \"Benjamin Fleischer\".\n\nThen try mounting the volume again."),
+                    CFSTR("The system extension required for mounting FUSE volumes could not be loaded.\n\nPlease open the Security & Privacy System Preferences pane, go to the General preferences and allow loading system software from developer \"" DEVELOPER_NAME "\".\n\nThen try mounting the volume again."),
                     CFSTR("Open System Preferences"),
                     CFSTR("Cancel"),
                     NULL,
